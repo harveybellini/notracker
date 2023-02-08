@@ -3,9 +3,10 @@
   "name": "Amazon Redirect",
   "version": "1.0",
   "permissions": [
-    "*://*.amazon.com/*"
+    "webNavigation"
   ],
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["background.js"],
+    "persistent": false
   }
 }
