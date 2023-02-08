@@ -1,16 +1,13 @@
 {
   "manifest_version": 3,
-  "name": "Amazon Redirect",
+  "name": "URL Regex Replacer",
   "version": "1.0",
-  "action": {
-    "default_popup": "hello.html",
-    "default_icon": "ronmess.jpg"
-  },
   "permissions": [
-    "webNavigation",
-    "tabs"
+    "activeTab",
+    "tabs",
+    "background"
   ],
   "background": {
-    "service_worker": "background.js"  
+    "sservice_worker": ["background.js"]
   }
 }

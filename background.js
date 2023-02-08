@@ -1,10 +1,13 @@
-chrome.tabs.onUpdated.addListener(function(activeInfo) {
-chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+// background.js
 
-  // since only one tab should be active and in the current window at once
-  // the return variable should only have one entry
-  var activeTab = tabs[0];
-  console.log(activeTab.url);
-  alert(activeTab.url);
-});
+chrome.tabs.onActivated.addListener(function(activeInfo) {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    var currentTab = tabs[0];
+    var currentUrl = currentTab.url;
+  
+    // Your updated regex function here
+    var newUrl = currentUrl.replace(/\?.*/, '');
+  
+    chrome.tabs.update(currentTab.id, { url: newUrl });
+  });
 });
