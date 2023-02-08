@@ -2,11 +2,15 @@
   "manifest_version": 3,
   "name": "Amazon Redirect",
   "version": "1.0",
+  "action": {
+    "default_popup": "hello.html",
+    "default_icon": "ronmess.jpg"
+  },
   "permissions": [
-    "webNavigation"
+    "webNavigation",
+    "tabs"
   ],
   "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+    "service_worker": "background.js"  
   }
 }
